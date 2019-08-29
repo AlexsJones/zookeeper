@@ -1,0 +1,54 @@
+# Default values for zookeeper.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 3
+
+image:
+  repository: gcr.io/google_containers/kubernetes-zookeeper
+  tag: 1.0-3.4.10
+  pullPolicy: IfNotPresent
+
+maxClientConnections: 60
+maxSessionTimeout: 40000
+minSessionTimeout: 4000
+tickTime: 2000
+purgeInterval: 12
+initLimit: 10
+syncLimit: 5
+snapRetainCount: 3
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 2181
+
+election:
+  port: 3888
+server:
+  port: 2888
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+heapSize: 1024m
+
+storageSize: 250Gi
