@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "zookeeper.name" . }}-internal
+  name: zk-hs
   labels:
 {{ include "zookeeper.labels" . | indent 4 }}
 spec:
@@ -18,7 +18,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "zookeeper.name" . }}
+  name: zk-cs
   labels:
 {{ include "zookeeper.labels" . | indent 4 }}
 spec:

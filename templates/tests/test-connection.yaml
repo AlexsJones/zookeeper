@@ -13,5 +13,5 @@ spec:
       command:
       - sh
       - -c
-      - "echo stat | nc '{{ include "zookeeper.fullname" . }}:{{ .Values.service.port }}'"
+      - "echo stat | nc 'zk-cs:{{ .Values.service.port }}'"
   restartPolicy: Never
