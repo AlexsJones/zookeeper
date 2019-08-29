@@ -2,7 +2,7 @@
 
 Apache ZooKeeper is an effort to develop and maintain an open-source server which enables highly reliable distributed coordination.
 
-## Chart Details 
+## Chart Details
 This chart will provision a fully functional and fully featured Zookeeper installation
 that can be used for a variety of tier 2/3 applications.
 
@@ -25,3 +25,7 @@ Alternatively, a YAML file that specifies the values for the parameters can be p
 ```bash
 $ helm install --name my-release -f values.yaml .
 ```
+
+## Docker image
+
+The Docker image used for this chart resides [here](https://github.com/kow3ns/kubernetes-zookeeper/tree/master/docker)
